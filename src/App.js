@@ -54,6 +54,7 @@ class App extends Component {
 	onSubmitImage = () => {
 		this.setState({ imgUrl: this.state.imgtxt });
 		//clarifai api call
+		//fetch('http://localhost:3001/imageurl',{
 		fetch('https://serene-dawn-47908.herokuapp.com/imageurl',{
 			method: 'post',
 			headers: {'Content-Type': 'application/json'},
@@ -63,7 +64,8 @@ class App extends Component {
 		})
 		.then(res=>res.json())
 		.then(response => {
-			if(response){
+			if(response.outputs){
+				// fetch('http://localhost:3001/image',{
 				fetch('https://serene-dawn-47908.herokuapp.com/image',{
 					method: 'put',
 					headers: {'Content-Type': 'application/json'},
@@ -76,8 +78,8 @@ class App extends Component {
 					this.setState(Object.assign(this.state.user, {entries: entries}))
 				})
 				.catch(console.log);
+				this.setBoxState(this.getFaceBox(response))
 			}
-			this.setBoxState(this.getFaceBox(response))
 		})
 		.catch(err => console.log(err));
 	}

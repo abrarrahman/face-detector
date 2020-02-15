@@ -14,6 +14,7 @@ class SignIn extends React.Component {
         this.setState({enteredEmail: event.target.value})
     }
     onSubmitSignIn = () => {
+        // fetch('http://localhost:3001/signin',{
         fetch('https://serene-dawn-47908.herokuapp.com/signin',{
             method: 'post',
             headers: {'Content-Type': 'application/json'},
