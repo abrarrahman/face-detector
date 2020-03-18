@@ -5,7 +5,7 @@ Users can either register or login to get started. The interface allows a url to
 The url will be used to display the image. The image is also sent to the Clarifai API to detect whether any faces exist and the coordinates of where this face resides in this image. This information when returned from the Clarifai API is used to draw a box around the face in the image and display it on the client side.<br />
 
 The user database is managed with PostgreSQL that connects to our Node server using knex.<br />
-This project has been deployed for free on heroku and you can check it out using the link in the description.<br />
+This project has been deployed for free on heroku and you can check it out using this link: https://face-detector-97.herokuapp.com/.<br />
 
 Please note: <br />
 The server goes to sleep after some period of inactivity so it takes a while for it to respond the first time. <br />
